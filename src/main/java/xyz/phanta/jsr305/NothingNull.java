@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 
 @Documented
 @TypeQualifierNickname
-@TypeQualifierDefault({ ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
+@TypeQualifierDefault({ ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER })
 @Nonnull
 @Target(ElementType.PACKAGE)
 @Retention(RetentionPolicy.CLASS)
