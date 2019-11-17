@@ -11,5 +11,4 @@
 
 # Gradle stuff
 /.gradle/
-gradle.properties
-
+gpr.properties

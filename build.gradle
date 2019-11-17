@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'xyz.phanta.jsr305'
@@ -12,5 +13,28 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+}
+
+publishing {
+    def confFileGpr = file('gpr.properties')
+    if (confFileGpr.exists()) {
+        def confGpr = new Properties()
+        confFileGpr.withInputStream { confGpr.load(it) }
+        repositories {
+            maven {
+                name = "gpr"
+                url = "https://maven.pkg.github.com/phantamanta44/jsr305"
+                credentials {
+                    username = confGpr.getProperty("gh_user")
+                    password = confGpr.getProperty("gh_token")
+                }
+            }
+        }
+        publications {
+            gpr(MavenPublication) {
+                from(components.java)
+            }
+        }
+    }
 }
