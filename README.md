@@ -8,4 +8,4 @@ Just add `@NothingNull` to all your package-info files and you're good to go.
 
 ## Maven
 
-This project can be retrieved from [GPR](https://github.com/phantamanta44/jsr305/packages).
+This project can be retrieved from [JitPack](https://jitpack.io/#phantamanta44/jsr305) (or [GPR](https://github.com/phantamanta44/jsr305/packages), if you want).
